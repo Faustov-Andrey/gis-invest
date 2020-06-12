@@ -1,0 +1,19 @@
+[Unit]
+Description=Manage {{ project }} service
+
+[Service]
+{% if app_port is defined %}
+Environment="port={{ app_port }}"
+{% endif %}
+WorkingDirectory={{ project_path }}
+ExecStart={{ java_bin }} \
+            -Xms{{ java_Xms }} \
+            -Xmx{{ java_Xmx }} \
+            -jar {{ jar_name }}
+User={{ app_user }}
+Type=simple
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,29 @@
+---
+- name: Create project directory
+  file:
+    path: "{{ project_path }}"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: '0744'
+    state: directory
+
+- name: Copy file with owner and permissions
+  copy:
+    src: "../target/{{ jar_name }}"
+    dest: "{{ project_path }}/{{ jar_name }}"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: '0644'
+  notify: restart_app
+
+- name: Setup unit file
+  template:
+    src: service.template
+    dest: "/etc/systemd/system/{{ project }}.service"
+    mode: '0755'
+
+- name: Ensure service is started and enabled
+  systemd:
+    name: "{{ project }}"
+    state: started
+    enabled: yes

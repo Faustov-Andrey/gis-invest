@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <script src="./jquery.js"></script>
+    <script src="./popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./sockjs-0.3.4.js"></script>
+    <script src="./stomp.js"></script>
+
+    <script>
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.open('GET', '/v0/organizations');
+
+        xhr.responseType = 'json';
+
+        xhr.send();
+
+        // тело ответа {"сообщение": "Привет, мир!"}
+        xhr.onload = function() {
+            let responseObj = xhr.response;
+            //alert(responseObj[0].fullName); // Привет, мир!
+            // передать полученные данные в DOM
+            //enter = document.getElementById("investor_name");
+            //enter.textContent = responseObj[0].fullName;
+
+
+/*            // Get a reference to the table
+            var tableRef = document.getElementById("attr-table");
+
+            // Insert a row in the table at row index 0
+            var newRow = tableRef.insertRow(0);
+
+            // Insert a cell in the row at index 0
+            var newCell = newRow.insertCell(0);
+            newCell.style.width = '500px';
+
+            // Append a text node to the cell
+            var newText = document.createTextNode('Полное наименование:');
+            newCell.appendChild(newText);
+
+            // Insert a cell in the row at index 0
+            var newCell = newRow.insertCell(1);
+
+            // Append a text node to the cell
+            var newText = document.createTextNode(responseObj[0].fullName);
+            newCell.appendChild(newText);
+
+
+            var newRow = tableRef.insertRow(1);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('Сокращенное наименование:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].shortName);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(2);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('ИНН:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].inn);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(3);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('КПП:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].kpp);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(4);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('ОГРН:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].ogrn);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(5);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('ОКПО:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].okpo);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(6);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('ОКВЭД (основной):');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].okved);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(7);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('Юридический адрес:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].legalAddress);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(8);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('Почтовый адрес:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].postAddress);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(9);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('Проектная компания:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].designCompany);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(10);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('ФИО официального представителя:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].representativePersoneName);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(11);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('ИНН официального представителя:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].representativePersoneInn);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(12);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('Адрес электронной почты уполномоченного лица:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].representativePersoneEmail);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(13);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('Телефон уполномоченного лица:');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].representativePersonePhone);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(14);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('Сведения об учредителях (наименование):');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].founderName);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(15);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('Сведения об учредителях (ИНН):');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].founderInn);
+            newCell.appendChild(newText);
+
+            var newRow = tableRef.insertRow(16);
+            var newCell = newRow.insertCell(0);
+            var newText = document.createTextNode('Расчетный счет организации :');
+            newCell.appendChild(newText);
+            var newCell = newRow.insertCell(1);
+            var newText = document.createTextNode(responseObj[0].bankAccountNumber);
+            newCell.appendChild(newText);*/
+
+        };
+
+    </script>
+
+</head>
+<body>
+    <div class="top_menu">
+    <!--<div class="">-->
+        <h1 class="title">&nbsp&nbsp&nbspГИС Капиталовложения</h1>
+        <h1 class="title">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp
+        </h1>
+        <h1 class="title" id="investor_name"><a href="login_form.html" style="color: white">Вход</a></h1>
+        <h1 class="title">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        </h1>
+    </div>
+    <div class="btn-group">
+        <div>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        </div>
+        <!--
+        <button type="button" class="btn btn-secondary dropdown-toggle dropdown__btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ВСП
+        </button>
+        -->
+        <div class="dropdown-menu dropdown-menu-left">
+            <button class="menu-button" type="button" style="height: 30px;">Список проектов</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button class="menu-button" type="button" style="height: 30px;">Список ЗЧПИ</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button class="menu-button" type="button" style="height: 30px;">Список СЗПК</button>
+        </div>
+
+        <!--
+        <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+
+        <button type="button" class="btn btn-secondary dropdown-toggle dropdown__btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Камера
+        </button>
+        <div class="dropdown-menu dropdown-menu-left">
+            <button class="dropdown-item" type="button">Операционный зал</button>
+            <button class="dropdown-item" type="button">Вход</button>
+        </div>
+        -->
+    </div>
+
+    <div class="organization-attributes-wrapper">
+        <div class="organization-attributes" id="organization-attributes">
+            <div class="attributes_title">Рабочий стол</div>
+            <div>
+                <table class="organization-attributes-table" id="attr-table">
+                    <!--<thead><td>Наименование аттрибута</td><td>Значение аттрибута</td></thead>-->
+                </table>
+            </div>
+        </div>
+        <div class="organization-messages" id="messages">
+            <div class="attributes_title">Официальная переписка</div><br>
+        </div>
+        <!--
+        <div class="bottom_wrapper clearfix">
+            <div class="button_wrp">
+                <button onclick="testConnect()" class="button_test">&nbsp&nbsp&nbspТест&nbsp&nbsp&nbsp</button>
+            </div>
+            <div>
+                &nbsp
+            </div>
+            <div class="button_wrp">
+                <button onclick="connect()" class="button_start">&nbsp&nbspСтарт&nbsp&nbsp</button>
+            </div>
+            <div>
+                &nbsp
+            </div>
+            <div class="button_wrp">
+                <button onclick="disconnect()" class="button_stop">&nbsp&nbsp&nbspСтоп&nbsp&nbsp&nbsp</button>
+            </div>
+        </div>
+        -->
+    </div>
+</body>
+</html>

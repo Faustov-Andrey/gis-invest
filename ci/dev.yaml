@@ -1,0 +1,20 @@
+---
+- name: Deploy APP on server
+  hosts: "{{ app_hosts }}"
+  become: yes
+  gather_facts: no
+
+  vars:
+    app_hosts: vap_backend
+    project: vap-core
+    project_path: "/opt/{{ project }}"
+    jar_name: vap-0.1.0.jar
+    java_Xms: 128m
+    java_Xmx: 512m
+    app_port: 8071
+    app_user: wfadmin
+    app_group: wfgroup
+    java_bin: /usr/WF/java/jre/bin/java
+
+  roles:
+    - roles/deploy

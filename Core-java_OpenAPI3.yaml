@@ -1,0 +1,969 @@
+openapi: 3.0.1
+info:
+  title: vap-core
+  description: 'Сервис базового функционала АС ''''Платформа видео-аналитики'''' '
+  version: 0.1.0
+servers:
+  - url: /
+tags:
+  - name: cameras
+    description: Операции с камерами
+  - name: bankUnits
+    description: Операции с подразделениями банка
+  - name: nnModels
+    description: Операции с метаданными нейросетевых моделей
+  - name: bankUnitTypes
+    description: Операции с типами подразделений
+  - name: videoServers
+    description: Операции с видеосерверами
+  - name: eventTypes
+    description: Операции с типами событий
+  - name: eventLogRecords
+    description: Операции с записями в журнале происшествий
+paths:
+  /cameras:
+    put:
+      tags:
+        - cameras
+      summary: Сохранить камеру
+      description: Сохранить изменения выбранной камеры в БД
+      operationId: updateCamera
+      requestBody:
+        description: Объект типа Camera который нужно добавить в БД
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/camera'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/camera'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/camera'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/camera'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: Camera not found
+          content: {}
+        405:
+          description: Invalid camera
+          content: {}
+      x-codegen-request-body-name: body
+    post:
+      tags:
+        - cameras
+      summary: Добавить камеру
+      description: Добавить новую камеру в БД
+      operationId: cameraList
+      requestBody:
+        description: Объект типа Camera который нужно добавить в БД
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/camera'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/camera'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/camera'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/camera'
+        405:
+          description: Invalid camera
+          content: {}
+      x-codegen-request-body-name: body
+  /cameras/{cameraId}:
+    get:
+      tags:
+        - cameras
+      summary: Получить камеру
+      description: Возвращает камеру с указанным id
+      operationId: getCameraById
+      parameters:
+        - name: cameraId
+          in: path
+          description: id камеры, которую нужно получить из БД
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/camera'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/camera'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: Camera not found
+          content: {}
+    delete:
+      tags:
+        - cameras
+      summary: Удалить камеру
+      description: Удалить выбранную камеру из БД
+      operationId: deleteCamera
+      parameters:
+        - name: cameraId
+          in: path
+          description: id камеры, которую нужно удалить
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/camera'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/camera'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: Camera not found
+          content: {}
+  /bankUnits/{bankUnitId}/cameras/:
+    get:
+      tags:
+        - cameras
+      summary: Получить список камер подразделения банка
+      description: Возвращает список камер установленных в подразделении банка с указанным
+        id
+      operationId: getCameraByBankUnitId
+      parameters:
+        - name: bankUnitId
+          in: path
+          description: id подразделения банка
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/camera'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/camera'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: BankUnit or Camera not found
+          content: {}
+  /cameras/{cameraId}/nnModels/{nnMmodelId}/:
+    get:
+      tags:
+        - cameras
+      summary: Получить видеопоток с камеры
+      description: Возвращает видеопоток с выбранной камеры проанализированный выбранной
+        нейросетевой моделью
+      operationId: getCameraStream
+      parameters:
+        - name: cameraId
+          in: path
+          description: id камеры
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: nnMmodelId
+          in: path
+          description: id нейросетевой модели
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/camera'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/camera'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: Camera or nnModel not found
+          content: {}
+  /bankUnits:
+    get:
+      tags:
+        - bankUnits
+      summary: Список всех подразделений банка
+      description: Возвращает список всех подразделений банка из БД
+      operationId: getBankUnits
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/bankUnit'
+        404:
+          description: BankUnits not found
+          content: {}
+    put:
+      tags:
+        - bankUnits
+      summary: Сохранить подразделения банка
+      description: Сохранить изменения выбранного подразделения банка в БД
+      operationId: updateBankUnit
+      requestBody:
+        description: Объект типа BankUnit, который нужно добавить в БД
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/bankUnit'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/bankUnit'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/bankUnit'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/bankUnit'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: BankUnit not found
+          content: {}
+        405:
+          description: Invalid bankUnit
+          content: {}
+      x-codegen-request-body-name: body
+    post:
+      tags:
+        - bankUnits
+      summary: Добавить подразделение банка
+      description: Добавить новое подразделение банка в БД
+      operationId: placeBankUnit
+      requestBody:
+        description: Объект типа BankUnit, который нужно добавить в БД
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/bankUnit'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/bankUnit'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/bankUnit'
+        405:
+          description: Invalid bankUnit
+          content: {}
+      x-codegen-request-body-name: body
+  /bankUnits/{bankUnitId}:
+    delete:
+      tags:
+        - bankUnits
+      summary: Удалить подразделение банка
+      description: Удалить выбранное подразделение банка из БД
+      operationId: deleteBankUnit
+      parameters:
+        - name: bankUnitId
+          in: path
+          description: id подразделения банка, которое нужно удалить
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/bankUnit'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/bankUnit'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: BankUnit not found
+          content: {}
+  /parentBankUnit/{parentId}/bankUnits/:
+    get:
+      tags:
+        - bankUnits
+      summary: Получить список подразделения банка дочерних для выбранного
+      description: Возвращает список камер подразделения банка входящих в структуру
+        подразделения с parentId
+      operationId: getBankUnitByParentId
+      parameters:
+        - name: parentId
+          in: path
+          description: id родительского подразделения банка
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/bankUnit'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/bankUnit'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: BankUnit not found
+          content: {}
+  /nnModels:
+    get:
+      tags:
+        - nnModels
+      summary: Список нейросетевых моделей
+      description: Возвращает список всех нейросетевых моделей из БД
+      operationId: getNNMpdels
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/nnModel'
+        404:
+          description: NNModel not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+    put:
+      tags:
+        - nnModels
+      summary: Изменить нейросетевую модель
+      description: Изменить метаданные новой нейросетевой модели в БД
+      operationId: updateNNMpdel
+      requestBody:
+        description: Объект типа NNModel, который нужно добавить в БД
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/nnModel'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/nnModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/nnModel'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: NNModel not found
+          content: {}
+        405:
+          description: Invalid nnModel
+          content: {}
+      x-codegen-request-body-name: body
+    post:
+      tags:
+        - nnModels
+      summary: Добавить нейросетевую модель
+      description: Добавить метаданные новой нейросетевой модели в БД
+      operationId: createNNModel
+      requestBody:
+        description: Объект типа NNModel, который нужно добавить в БД
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/nnModel'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/nnModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/nnModel'
+        405:
+          description: Invalid nnModel
+          content: {}
+      x-codegen-request-body-name: body
+  /nnModels/{nnModelId}:
+    delete:
+      tags:
+        - nnModels
+      summary: Delete nnModel
+      description: Deleting nnModel from DB.
+      operationId: deleteNNModel
+      parameters:
+        - name: nnModelId
+          in: path
+          description: id нейросетевой модели, которую нужно удалить
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/nnModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/nnModel'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: nnModel not found
+          content: {}
+  /bankUnitTypes:
+    get:
+      tags:
+        - bankUnitTypes
+      summary: Список типов подразделений Банка
+      description: Возвращает список всех типов подразделений Банка
+      operationId: getBankUnitS
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/bankUnitType'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/bankUnitType'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: BankUnitType not found
+          content: {}
+  /videoServers:
+    put:
+      tags:
+        - videoServers
+      summary: Сохранить видеосервер
+      description: Сохранить изменения выбранного видеосервера в БД
+      operationId: updateVideoServer
+      requestBody:
+        description: Объект типа Videoserver который нужно добавить в БД
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/videoServer'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/videoServer'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/videoServer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/videoServer'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: VideoServer not found
+          content: {}
+        405:
+          description: Invalid videoServer
+          content: {}
+      x-codegen-request-body-name: body
+    post:
+      tags:
+        - videoServers
+      summary: Добавить видеосервер
+      description: Добавить новый видеосервер в БД
+      operationId: videoServerList
+      requestBody:
+        description: Объект типа VideoServer, который нужно добавить в БД
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/videoServer'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/videoServer'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/videoServer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/videoServer'
+        405:
+          description: Invalid VideoServer
+          content: {}
+      x-codegen-request-body-name: body
+  /videoServers/{videoServerId}:
+    get:
+      tags:
+        - videoServers
+      summary: Получить видеосервер
+      description: Возвращает видеосервер с указанным id
+      operationId: getVideoServerById
+      parameters:
+        - name: videoServerId
+          in: path
+          description: id видеосервера, которsq нужно получить из БД
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/videoServer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/videoServer'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: VideoServer not found
+          content: {}
+    delete:
+      tags:
+        - videoServers
+      summary: Удалить видеосервер
+      description: Удалить выбранный видеосервер из БД
+      operationId: deleteVideoServer
+      parameters:
+        - name: videoServerId
+          in: path
+          description: id видеосервера, которую нужно удалить
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/videoServer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/videoServer'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: VideoServer not found
+          content: {}
+  /bankUnits/{bankUnitId}/videoServers/:
+    get:
+      tags:
+        - videoServers
+      summary: Получить список видеосерверов подразделения банка
+      description: Возвращает список видеосерверов установленных в подразделении банка с указанным
+        id
+      operationId: getVideoServerByBankUnitId
+      parameters:
+        - name: bankUnitId
+          in: path
+          description: id подразделения банка
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/videoServer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/videoServer'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: BankUnit not found
+          content: {}
+  /eventTypes:
+    get:
+      tags:
+        - eventTypes
+      summary: Список типов происшествий
+      description: Возвращает список всех типов происшествий
+      operationId: getEventTypes
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/eventType'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/eventType'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: eventType not found
+          content: {}
+  /eventLogRecords:
+    get:
+      tags:
+        - eventLogRecords
+      summary: Список записей журнала происшествий
+      description: Возвращает список всех  записей журнала происшествий из БД
+      operationId: getEventLogRecords
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/eventLogRecord'
+        404:
+          description: BankUnits not found
+          content: {}
+    put:
+      tags:
+        - eventLogRecords
+      summary: Сохранить запись журнала происшествий
+      description: Сохранить изменения выбранной записи журнала происшествий в БД
+      operationId: updateEventLogRecord
+      requestBody:
+        description: Объект типа EventLogRecord, который нужно добавить в БД
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/eventLogRecord'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/eventLogRecord'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/eventLogRecord'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/eventLogRecord'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: EventLogRecord not found
+          content: {}
+        405:
+          description: Invalid EventLogRecord
+          content: {}
+      x-codegen-request-body-name: body
+    post:
+      tags:
+        - eventLogRecords
+      summary: Добавить запись в журнал происшествий
+      description: Добавить новую запись в таблицу журнал происшествий в БД
+      operationId: placeEventLogRecord
+      requestBody:
+        description: Объект типа EventLogRecord, который нужно добавить в БД
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/eventLogRecord'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/eventLogRecord'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/eventLogRecord'
+        405:
+          description: Invalid EventLogRecord
+          content: {}
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+        - eventLogRecords
+      summary: Удалить запись в журнале происшествий
+      description: Удалить выбранную запись в журнале происшествий из БД
+      operationId: deleteEventLogRecord
+      parameters:
+        - name: уventLogRecordId
+          in: path
+          description: id записи в журнале происшествий, которую нужно удалить
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/eventLogRecord'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/eventLogRecord'
+        400:
+          description: Invalid id supplied
+          content: {}
+        404:
+          description: EventLogRecord not found
+          content: {}
+components:
+  schemas:
+    camera:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        bank_unit_id:
+          type: integer
+          format: int64
+        access_login:
+          type: string
+        access_pwd:
+          type: string
+        ip_address:
+          type: string
+        model:
+          type: string
+        vendor_name:
+          type: string
+        description:
+          type: string
+        comment:
+          type: string
+      xml:
+        name: camera
+    bankUnit:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        number:
+          type: string
+        name:
+          type: string
+        address:
+          type: string
+        phone_number:
+          type: string
+        description:
+          type: string
+        comment:
+          type: string
+      xml:
+        name: bankUnit
+    nnModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        fileName:
+          type: string
+        dockerImageName:
+          type: string
+        description:
+          type: string
+        comment:
+          type: string
+      xml:
+        name: nnModel
+    bankUnitType:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        description:
+          type: string
+      xml:
+        name: bankUnitType
+    videoServer:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        bank_unit_id:
+          type: integer
+          format: int64
+        access_login:
+          type: string
+        access_pwd:
+          type: string
+        ip_address:
+          type: string
+        model:
+          type: string
+        vendor_name:
+          type: string
+        description:
+          type: string
+        comment:
+          type: string
+      xml:
+        name: videoServer
+    eventType:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        code:
+          type: string
+        description:
+          type: string
+    eventLogRecord:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        cameraId:
+          type: integer
+          format: int64
+        bankUnitId:
+          type: integer
+          format: int64
+        nnModelId:
+          type: integer
+          format: int64
+        eventTypeId:
+          type: integer
+          format: int64
+        date:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+        cadr:
+          type: object
+        comment:
+          type: string
+      xml:
+        name: EventLogRecord
+    user:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        firstName:
+          type: string
+        fathersName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        phone:
+          type: string
+        userStatus:
+          type: integer
+          format: int32
+      xml:
+        name: User

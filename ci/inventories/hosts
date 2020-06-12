@@ -1,0 +1,4 @@
+[vap_backend]
+#10.53.159.89 ansible_user=mvp_dev ansible_ssh_extra_args='-o StrictHostKeyChecking=no' ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+10.53.159.89 ansible_ssh_extra_args='-o StrictHostKeyChecking=no' ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+#10.53.159.89

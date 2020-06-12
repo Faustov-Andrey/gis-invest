@@ -1,0 +1,61 @@
+#!groovy
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent { 
+        label 'Linux_Default'
+        }
+    // options {
+    //     buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+    //     timestamps()
+    // }
+    stages {
+        stage('Clean Workspace') {
+            steps {
+                deleteDir()
+                checkout scm
+            }
+        }        
+        stage("Build") {
+            steps {
+                withMaven(jdk: 'jdk8_latest', maven: 'Maven 3.6.2') {
+                    sh 'mvn clean install'
+                }
+                // sh 'cp -vR target/vap-video-0.1.0.jar ci/files/'
+                // sh 'ls -lah ci/files'
+            }
+        }
+        //// tests
+        // stage("check") {
+        //     steps {
+        //         sh 'ansible --version'
+        //         sh 'ansible-lint dev.yaml'
+        //     }
+        // }
+
+        // stage ('Подключение по SSH') {
+        //     steps {
+        //         withCredentials([sshUserPrivateKey(credentialsId: 'b317ee05-f394-4411-8fed-95c233052f04', keyFileVariable: 'KEY')]) {
+        //             sh 'ssh -i ${KEY} mvp_dev@10.53.159.89 id'
+        //         }
+        //     }
+        // }
+        //// tests
+
+        stage('Deploy') {
+            steps {
+                ansiColor('xterm') {
+                    ansiblePlaybook(
+                        // installation 'ansible28'
+                        credentialsId: 'b317ee05-f394-4411-8fed-95c233052f04',
+                        inventory: 'ci/inventories/hosts',
+                        playbook: 'ci/dev.yaml',
+                        // vaultCredentialsId: 'e43119f3-7490-481a-931a-2ea567244242', # Идентификатор секретного текста с паролем vault
+                        hostKeyChecking: false,     // # Отключение проверки SSH отпечатка хоста
+                        colorized: true
+                    )
+                }
+            }
+        }
+    }
+}

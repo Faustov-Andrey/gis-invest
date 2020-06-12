@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="Platform_third_party" />
+      <option name="name" value="libs-third_party" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/Platform_thirdparty/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="AE-SPARK_release" />
+      <option name="name" value="AE-SPARK_release" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/AE-SPARK_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="PPRB_dev_group-repo" />
+      <option name="name" value="PPRB_dev_group-repo" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/groups/PPRB_dev_group" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sonatype-public-grid-proxy" />
+      <option name="name" value="sonatype-public-grid-proxy" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/sonatype-public-grid_proxy/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Platform_release" />
+      <option name="name" value="libs-release" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/Platform_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central1" />
+      <option name="name" value="central1" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/central" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="stand-in" />
+      <option name="name" value="stand-in" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/PPRB_Application-Journal_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="BPM_release" />
+      <option name="name" value="BPM_release" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/BPM_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="mdm-snapshots" />
+      <option name="name" value="mdm-snapshots" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/mdm-snapshot/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="MDM" />
+      <option name="name" value="MDM" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/prb-mdmp_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="central" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/central/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Platform_snapshot" />
+      <option name="name" value="libs-snapshot" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/Platform_snapshot/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="GBK_thirdparty" />
+      <option name="name" value="GBK_thirdparty" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/GBK_thirdparty/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nsi-fasade" />
+      <option name="name" value="nsi-fasade" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/service/local/repositories/CC_CD_KK_repo/content/AS_Central/PPRB/BPS/BPS_Dictionary/Distrib/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="BPS-DICTGEN_release" />
+      <option name="name" value="BPS-DICTGEN_release" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/BPS-DICTGEN_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="backbase" />
+      <option name="name" value="backbase" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/backbase_repo/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="GBK_release" />
+      <option name="name" value="GBK_release" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/GBK_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sbbol_thirdparty" />
+      <option name="name" value="sbbol_thirdparty" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/service/local/repositories/sbbol_thirdparty/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="UOD_release" />
+      <option name="name" value="UOD_release" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/UOD_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="PPRBAC_release" />
+      <option name="name" value="PPRBAC_release" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/PPRBAC_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="migr reposdaf" />
+      <option name="name" value="migr reposdaf" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/MIGR_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="INTLAB_snapshot" />
+      <option name="name" value="intlab-snapshot" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/INTLAB_snapshot/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="MDM-group" />
+      <option name="name" value="MDM-group" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/prb-mdmp_group/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="STOPLST_PPRB_release" />
+      <option name="name" value="STOPLST_PPRB_release" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/STOPLST_PPRB_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="EFSTOOLS_group" />
+      <option name="name" value="EFSTOOLS_group" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/groups/EFSTOOLS_group/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="RKO" />
+      <option name="name" value="RKO" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/18plus_RKO_release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="gg" />
+      <option name="name" value="gg" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/gridgainsystems_proxy" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="mdm-release" />
+      <option name="name" value="mdm-release" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/mdm-release" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="INTLAB_release" />
+      <option name="name" value="intlab-release" />
+      <option name="url" value="http://sbtnexus.ca.sbrf.ru:8081/nexus/content/repositories/INTLAB_release/" />
+    </remote-repository>
+  </component>
+</project>

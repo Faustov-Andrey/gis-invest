@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="561aff7a-9f7d-4fc3-b929-c21e9cc45b93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/gis-kv.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sbt/vap/controller/OrganizationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sbt/vap/configure/SwaggerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sbt/vap/configure/SwaggerConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sbt/vap/controller/BankUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sbt/vap/controller/BankUnitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sbt/vap/controller/RequestLogRecordController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sbt/vap/model/RequestLogRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sbt/vap/model/Organization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sbt/vap/repository/RequestLogRecordRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sbt/vap/repository/OrganizationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sbt/vap/service/RequestLogRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sbt/vap/service/OrganizationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/SockJS_.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sbt/vap/controller/BankUnitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sbt/vap/controller/BankUnitController.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="1czB6kbNdTWHCSDWGDplAvO9Yoj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="h2&#10;postgresql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sbt.vap.configure" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAProjects\vap\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="gis-kv" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sbt.vap.configure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sbt.vap.application.Application" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gis-kv" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sbt.vap.application.Application" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="561aff7a-9f7d-4fc3-b929-c21e9cc45b93" name="Default Changelist" comment="" />
+      <created>1581498681818</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581498681818</updated>
+      <workItem from="1581498685076" duration="12203000" />
+      <workItem from="1582707218547" duration="16939000" />
+      <workItem from="1582877812764" duration="184000" />
+      <workItem from="1582878103716" duration="13624000" />
+      <workItem from="1583137184765" duration="7604000" />
+      <workItem from="1585807453160" duration="5594000" />
+      <workItem from="1585894424566" duration="5459000" />
+      <workItem from="1585910783880" duration="7148000" />
+      <workItem from="1586001325219" duration="2140000" />
+      <workItem from="1586100255233" duration="2481000" />
+      <workItem from="1586153354064" duration="10679000" />
+      <workItem from="1586241484985" duration="13521000" />
+      <workItem from="1586327373918" duration="7229000" />
+      <workItem from="1586417207706" duration="7829000" />
+      <workItem from="1586499888738" duration="8126000" />
+      <workItem from="1586757658823" duration="2285000" />
+      <workItem from="1586874741142" duration="548000" />
+      <workItem from="1586932139570" duration="8304000" />
+      <workItem from="1587017313942" duration="6573000" />
+      <workItem from="1587117920459" duration="7014000" />
+      <workItem from="1587362986413" duration="6628000" />
+      <workItem from="1587449130451" duration="7964000" />
+      <workItem from="1587538151745" duration="4987000" />
+      <workItem from="1587564265223" duration="2406000" />
+      <workItem from="1587622265035" duration="2910000" />
+      <workItem from="1587707754385" duration="598000" />
+      <workItem from="1587972368530" duration="3103000" />
+      <workItem from="1588054054355" duration="599000" />
+      <workItem from="1588143200367" duration="598000" />
+      <workItem from="1588233503157" duration="593000" />
+      <workItem from="1588518490357" duration="599000" />
+      <workItem from="1588571120682" duration="590000" />
+      <workItem from="1588665245302" duration="2498000" />
+      <workItem from="1588743316424" duration="1672000" />
+      <workItem from="1588829849494" duration="4870000" />
+      <workItem from="1588917526501" duration="3568000" />
+      <workItem from="1589521030872" duration="5234000" />
+      <workItem from="1589790315902" duration="15034000" />
+      <workItem from="1589867316429" duration="9300000" />
+      <workItem from="1589953363543" duration="1799000" />
+      <workItem from="1590041218294" duration="2200000" />
+      <workItem from="1590127756564" duration="756000" />
+      <workItem from="1590648829348" duration="595000" />
+      <workItem from="1590731879860" duration="1085000" />
+      <workItem from="1591521374078" duration="776000" />
+      <workItem from="1591522964443" duration="598000" />
+      <workItem from="1591526437274" duration="1808000" />
+      <workItem from="1591528299967" duration="1188000" />
+      <workItem from="1591540979332" duration="1596000" />
+      <workItem from="1591549396941" duration="1649000" />
+      <workItem from="1591551142815" duration="1761000" />
+      <workItem from="1591553973480" duration="1755000" />
+      <workItem from="1591556068140" duration="1773000" />
+      <workItem from="1591559771930" duration="1217000" />
+      <workItem from="1591562315068" duration="2082000" />
+      <workItem from="1591565496813" duration="1730000" />
+      <workItem from="1591567384394" duration="1695000" />
+      <workItem from="1591569309144" duration="1747000" />
+      <workItem from="1591571226559" duration="1694000" />
+      <workItem from="1591573009482" duration="1731000" />
+      <workItem from="1591574839162" duration="198000" />
+      <workItem from="1591593406906" duration="1465000" />
+      <workItem from="1591604996871" duration="1442000" />
+      <workItem from="1591606738202" duration="1722000" />
+      <workItem from="1591609134808" duration="1736000" />
+      <workItem from="1591610915972" duration="1773000" />
+      <workItem from="1591612734303" duration="1775000" />
+      <workItem from="1591614722750" duration="1776000" />
+      <workItem from="1591616543866" duration="806000" />
+      <workItem from="1591622036516" duration="1720000" />
+      <workItem from="1591631814294" duration="1660000" />
+      <workItem from="1591633526290" duration="598000" />
+      <workItem from="1591634250088" duration="1261000" />
+      <workItem from="1591808517494" duration="1040000" />
+      <workItem from="1591810409869" duration="708000" />
+      <workItem from="1591954809993" duration="583000" />
+    </task>
+    <task id="LOCAL-00001" summary="добавил сущность &quot;запись в журнале событий&quot; [EventLogRecord]">
+      <created>1582880894531</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582880894532</updated>
+    </task>
+    <task id="LOCAL-00002" summary="добавил сущность &quot;запись в журнале запросов&quot; [RequestLogRecord]">
+      <created>1582896000341</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582896000341</updated>
+    </task>
+    <task id="LOCAL-00003" summary="восстановил часть вызовов для фронта">
+      <created>1585749775937</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585749775937</updated>
+    </task>
+    <task id="LOCAL-00004" summary="postgress подцепил">
+      <created>1585809031989</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585809031989</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Сделал выборку камер для выбранного ВСП">
+      <created>1585923564457</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585923564457</updated>
+    </task>
+    <task id="LOCAL-00006" summary="устранил баг в селекте">
+      <created>1586002861154</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586002861154</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Переделал методы CameraController с учетом требований OpenAPI">
+      <created>1586242682771</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1586242682771</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Поправил HQL-запрос для /v0/bank-units/{bankUnitId}/cameras">
+      <created>1586262289812</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586262289812</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Переделал вызовы для ВСП">
+      <created>1586357599035</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1586357599035</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Рабочаф версия для деплоя на WildFly">
+      <created>1586522771171</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1586522771171</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Добавил BankUnitType">
+      <created>1587129186139</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587129186139</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Доработал VideoServer">
+      <created>1587137411230</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587137411230</updated>
+    </task>
+    <task id="LOCAL-00013" summary="переделал поля nnModel">
+      <created>1589790753396</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1589790753396</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Добавил @CrossOrigin">
+      <created>1589812147178</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1589812147178</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Добавил NNMotelDTO">
+      <created>1589867458726</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1589867458727</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Добавил NNMotelDTO">
+      <created>1589876563285</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1589876563285</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Добавил NNMotelDTO">
+      <created>1589877241057</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1589877241057</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Добавил @CrosOrigin во все контроллеры">
+      <created>1589954643020</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1589954643020</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Поправил headre-ы в контроллерах сущностей">
+      <created>1590042516449</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1590042516449</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="добавил сущность &quot;запись в журнале событий&quot; [EventLogRecord]" />
+    <MESSAGE value="добавил сущность &quot;запись в журнале запросов&quot; [RequestLogRecord]" />
+    <MESSAGE value="восстановил часть вызовов для фронта" />
+    <MESSAGE value="postgress подцепил" />
+    <MESSAGE value="Сделал выборку камер для выбранного ВСП" />
+    <MESSAGE value="устранил баг в селекте" />
+    <MESSAGE value="Переделал методы CameraController с учетом требований OpenAPI" />
+    <MESSAGE value="Поправил HQL-запрос для /v0/bank-units/{bankUnitId}/cameras" />
+    <MESSAGE value="Переделал вызовы для ВСП" />
+    <MESSAGE value="Рабочаф версия для деплоя на WildFly" />
+    <MESSAGE value="Добавил BankUnitType" />
+    <MESSAGE value="Доработал VideoServer" />
+    <MESSAGE value="переделал поля nnModel" />
+    <MESSAGE value="Добавил @CrossOrigin" />
+    <MESSAGE value="Добавил NNMotelDTO" />
+    <MESSAGE value="Добавил @CrosOrigin во все контроллеры" />
+    <MESSAGE value="Поправил headre-ы в контроллерах сущностей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поправил headre-ы в контроллерах сущностей" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="591" y="93" key="#Application" timestamp="1591528474020">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="591" y="93" key="#Application/0.0.1920.1040@0.0.1920.1040" timestamp="1591528474020" />
+    <state x="831" y="386" width="642" height="219" key="#Assign_Data_Sources" timestamp="1591551356602">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="831" y="386" width="642" height="219" key="#Assign_Data_Sources/0.0.1920.1040@0.0.1920.1040" timestamp="1591551356602" />
+    <state x="386" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591541249355">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="386" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591541249355" />
+    <state x="661" y="285" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591528672042">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="661" y="285" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591528672042" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591549625817">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591549625817" />
+    <state x="712" y="250" key="FileChooserDialogImpl" timestamp="1591562688657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="712" y="250" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591562688657" />
+    <state width="1876" height="379" key="GridCell.Tab.0.bottom" timestamp="1591811877747">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877747" />
+    <state width="1876" height="379" key="GridCell.Tab.0.center" timestamp="1591811877747">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877747" />
+    <state width="1876" height="379" key="GridCell.Tab.0.left" timestamp="1591811877746">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877746" />
+    <state width="1876" height="379" key="GridCell.Tab.0.right" timestamp="1591811877747">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877747" />
+    <state width="1876" height="379" key="GridCell.Tab.1.bottom" timestamp="1591811877747">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877747" />
+    <state width="1876" height="379" key="GridCell.Tab.1.center" timestamp="1591811877747">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877747" />
+    <state width="1876" height="379" key="GridCell.Tab.1.left" timestamp="1591811877747">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877747" />
+    <state width="1876" height="379" key="GridCell.Tab.1.right" timestamp="1591811877747">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877747" />
+    <state width="1876" height="379" key="GridCell.Tab.2.bottom" timestamp="1591811877748">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877748" />
+    <state width="1876" height="379" key="GridCell.Tab.2.center" timestamp="1591811877748">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877748" />
+    <state width="1876" height="379" key="GridCell.Tab.2.left" timestamp="1591811877747">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877747" />
+    <state width="1876" height="379" key="GridCell.Tab.2.right" timestamp="1591811877748">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="379" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591811877748" />
+    <state x="433" y="127" key="SettingsEditor" timestamp="1591528557803">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="433" y="127" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591528557803" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sbt/vap/controller/BankUnitTypeController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sbt/vap/service/BankUnitService.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sbt/vap/controller/EventTypeController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sbt/vap/controller/CameraController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sbt/vap/controller/NNModelController.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sbt/vap/service/NNModelService.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sbt/vap/controller/BankUnitController.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

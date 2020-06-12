@@ -1,0 +1,1 @@
+loginInput = document.getElementById('login-input');
