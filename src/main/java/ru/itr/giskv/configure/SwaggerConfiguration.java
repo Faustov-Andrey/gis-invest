@@ -23,7 +23,7 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).groupName("").
                 apiInfo(getApiInfo()).select().apis(RequestHandlerSelectors.
-                basePackage("ru.itr.gis-invest")).paths(PathSelectors.any()).build();
+                basePackage("ru.itr.giskv")).paths(PathSelectors.any()).build();
     }
 
     private ApiInfo getApiInfo() {

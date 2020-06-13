@@ -4,57 +4,57 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="ACCOUNT")
-public class User  implements Serializable {
+@Table(name="giskv_user")
+public class GiskvUser implements Serializable {
 
     /**
      * Идентификатор записи
      */
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long id;
 
     /**
      * Фамилия пользователя
      */
-    @Column(name = "LAST_NAME", nullable = true, length = 128)
+    @Column(name = "last_name", nullable = true, length = 128)
     private String lastName;
 
     /**
      * Имя пользователя
      */
-    @Column(name = "FIRST_NAME", nullable = true, length = 128)
+    @Column(name = "first_name", nullable = true, length = 128)
     private String firstName;
 
     /**
      * Отчество пользователя
      */
-    @Column(name = "FATHERS_NAME", nullable = true, length = 128)
+    @Column(name = "father_name", nullable = true, length = 128)
     private String fathersName;
 
     /**
      * Отчество пользователя
      */
-    @Column(name = "PERSONAL_NUMBER", nullable = true, length = 32)
+    @Column(name = "personal_number", nullable = true, length = 32)
     private String personalNumber;
 
     /**
      * Логин пользователя
      */
-    @Column(name = "LOGIN", nullable = true, length = 32)
+    @Column(name = "login", nullable = true, length = 32)
     private String login;
 
        /**
      * Пароль пользователя
      */
-    @Column(name = "PWD", nullable = true, length = 32)
+    @Column(name = "pwd", nullable = true, length = 32)
     private String pwd;
 
     /**
      * комментарий
      */
-    @Column(name = "COMMENT", nullable = true, length = 1024)
+    @Column(name = "comment", nullable = true, length = 1024)
     private String comment;
 
 

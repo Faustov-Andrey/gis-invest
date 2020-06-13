@@ -24,7 +24,7 @@ public class OrganizationController {
     }
 
     @GetMapping(path = "/v0/organizations")
-    public ResponseEntity<List<Organization>> getAllRequestLogRecords() {
+    public ResponseEntity<List<Organization>> getAllOrganizations() {
         List<Organization> organizationList = this.organizationService.findAll();
         return new ResponseEntity<>(organizationList, headers, HttpStatus.OK);
     }
@@ -34,6 +34,7 @@ public class OrganizationController {
 
         //ниже временный код для проверки работы метода saveOrganization()
         Organization organization = new Organization();
+        organization.setOrgForm(body.getOrgForm());
         organization.setFullName(body.getFullName());
         organization.setShortName(body.getShortName());
         organization.setInn(body.getInn());
@@ -41,16 +42,7 @@ public class OrganizationController {
         organization.setOgrn(body.getOgrn());
         organization.setOkpo(body.getOkpo());
         organization.setOkved(body.getOkved());
-        organization.setLegalAddress(body.getLegalAddress());
-        organization.setPostAddress(body.getPostAddress());
-        organization.setDesignCompany(body.getDesignCompany());
-        organization.setRrepresentativePersoneName(body.getRepresentativePersoneName());
-        organization.setRepresentativePersoneInn(body.getRepresentativePersoneInn());
-        organization.setRepresentativePersoneEmail(body.getRepresentativePersoneEmail());
-        organization.setRepresentativePersonePhone(body.getRepresentativePersonePhone());
-        organization.setFounderName(body.getFounderName());
-        organization.setFounderInn(body.getFounderInn());
-        organization.setBankAccountNumber(body.getBankAccountNumber());
+        organization.setShareCapital(body.getShareCapital());
         organization.setDescription(organization.getDescription());
         organization.setComment(organization.getComment());
 
@@ -64,6 +56,8 @@ public class OrganizationController {
 
         //ниже временный код для проверки работы метода saveRequestLogRecord()
         Organization organization = new Organization();
+        organization.setId(body.getId());
+        organization.setOrgForm(body.getOrgForm());
         organization.setFullName(body.getFullName());
         organization.setShortName(body.getShortName());
         organization.setInn(body.getInn());
@@ -71,16 +65,7 @@ public class OrganizationController {
         organization.setOgrn(body.getOgrn());
         organization.setOkpo(body.getOkpo());
         organization.setOkved(body.getOkved());
-        organization.setLegalAddress(body.getLegalAddress());
-        organization.setPostAddress(body.getPostAddress());
-        organization.setDesignCompany(body.getDesignCompany());
-        organization.setRrepresentativePersoneName(body.getRepresentativePersoneName());
-        organization.setRepresentativePersoneInn(body.getRepresentativePersoneInn());
-        organization.setRepresentativePersoneEmail(body.getRepresentativePersoneEmail());
-        organization.setRepresentativePersonePhone(body.getRepresentativePersonePhone());
-        organization.setFounderName(body.getFounderName());
-        organization.setFounderInn(body.getFounderInn());
-        organization.setBankAccountNumber(body.getBankAccountNumber());
+        organization.setShareCapital(body.getShareCapital());
         organization.setDescription(organization.getDescription());
         organization.setComment(organization.getComment());
 
@@ -96,7 +81,7 @@ public class OrganizationController {
     }
 
     @DeleteMapping(path = "/v0/organizations/{id}")
-    public boolean deleteRequestLogRecordById(Long id) {
+    public boolean deleteOrganizationById(Long id) {
         Organization organization = getOrganizationById(id);
         this.organizationService.deleteOrganization(organization);
         //возвращать true если созранение прошло успешно и false при сбое

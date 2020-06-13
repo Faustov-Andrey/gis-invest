@@ -1,6 +1,5 @@
 package ru.itr.giskv.application;
 
-import ru.itr.giskv.model.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -23,13 +23,19 @@ public class Organization implements Serializable {
     /**
      * Полное наименование
      */
-    @Column(name = "full_name", nullable = true)
+    @Column(name = "org_form", nullable = true, length = 128)
+    private String orgForm;
+
+    /**
+     * Полное наименование
+     */
+    @Column(name = "full_name", nullable = true, length = 128)
     private String fullName;
 
     /**
      * Сокращенное наименование
      */
-    @Column(name = "short_name", nullable = true)
+    @Column(name = "short_name", nullable = true, length = 128)
     private String shortName;
 
     /**
@@ -63,64 +69,10 @@ public class Organization implements Serializable {
     private Long okved;
 
     /**
-     * Юридический адрес
-     */
-    @Column(name = "legal_address", nullable = true, length = 128)
-    private String legalAddress;
-
-    /**
-     * Почтовый адрес
-     */
-    @Column(name = "post_address", nullable = true, length = 128)
-    private String postAddress;
-
-    /**
-     * Проектная компания
-     */
-    @Column(name = "design_company", nullable = true, length = 128)
-    private String designCompany;
-
-    /**
-     * Сведения о лице, имеющем право без доверенности действовать от имени юридического лица (ФИО)
-     */
-    @Column(name = "representative_persone_name", nullable = true, length = 128)
-    private String representativePersoneName;
-
-    /**
-     * ИНН лица, имеющем право без доверенности действовать от имени юридического лица
-     */
-    @Column(name = "representative_persone_inn", nullable = true)
-    private Long representativePersoneInn;
-
-    /**
-     * Адрес электронной почты уполномоченного лица
-     */
-    @Column(name = "representative_persone_email", nullable = true, length = 128)
-    private String representativePersoneEmail;
-
-    /**
-     * Телефон уполномоченного лица
-     */
-    @Column(name = "representative_persone_phone", nullable = true, length = 128)
-    private String representativePersonePhone;
-
-    /**
-     * Сведения об учредителях (участниках) юридического лица (наименование)
-     */
-    @Column(name = "founder_name", nullable = true, length = 128)
-    private String founderName;
-
-    /**
-     * Сведения об учредителях (участниках) юридического лица (ИНН)
-     */
-    @Column(name = "founder_inn", nullable = true, length = 128)
-    private String founderInn;
-
-    /**
      * Расчетный счет организации (БИК, БАНК)
      */
-    @Column(name = "bank_account_number", nullable = true, length = 128)
-    private String bankAccountNumber;
+    @Column(name = "share_capital", nullable = true, length = 128)
+    private String shareCapital;
 
     /**
      * описание
@@ -141,8 +93,13 @@ public class Organization implements Serializable {
         this.id = id;
     }
 
+    public String getOrgForm(){ return orgForm; }
+    public void setOrgForm(String orgForm) {
+        this.orgForm = orgForm;
+    }
+
     public String getFullName(){ return fullName; }
-    public void setFullName(String userId) {
+    public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
@@ -176,54 +133,9 @@ public class Organization implements Serializable {
         this.okved = okved;
     }
 
-    public String getLegalAddress(){ return legalAddress; }
-    public void setLegalAddress(String legalAddress) {
-        this.legalAddress = legalAddress;
-    }
-
-    public String getPostAddress(){ return postAddress; }
-    public void setPostAddress(String postAddress) {
-        this.postAddress = postAddress;
-    }
-
-    public String getDesignCompany(){ return designCompany; }
-    public void setDesignCompany(String designCompany) {
-        this.designCompany = designCompany;
-    }
-
-    public String getRepresentativePersoneName(){ return representativePersoneName; }
-    public void setRrepresentativePersoneName(String representativePersoneName) {
-        this.representativePersoneName = representativePersoneName;
-    }
-
-    public Long getRepresentativePersoneInn(){ return representativePersoneInn; }
-    public void setRepresentativePersoneInn(Long representativePersoneInn) {
-        this.representativePersoneInn = representativePersoneInn;
-    }
-
-    public String getRepresentativePersoneEmail(){ return representativePersoneEmail; }
-    public void setRepresentativePersoneEmail(String representativePersoneEmail) {
-        this.representativePersoneEmail = representativePersoneEmail;
-    }
-
-    public String getRepresentativePersonePhone(){ return representativePersonePhone; }
-    public void setRepresentativePersonePhone(String representativePersonePhone) {
-        this.representativePersonePhone = representativePersonePhone;
-    }
-
-    public String getFounderName(){ return founderName; }
-    public void setFounderName(String foundersNames) {
-        this.founderName = founderName;
-    }
-
-    public String getFounderInn(){ return founderInn; }
-    public void setFounderInn(String founderInn) {
-        this.founderInn = founderInn;
-    }
-
-    public String getBankAccountNumber(){ return bankAccountNumber; }
-    public void setBankAccountNumber(String bankAccountNumber) {
-        this.bankAccountNumber = bankAccountNumber;
+    public String getShareCapital(){ return shareCapital; }
+    public void setShareCapital(String shareCapital) {
+        this.shareCapital = shareCapital;
     }
 
     public String getDescription(){ return description; }
