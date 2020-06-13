@@ -18,7 +18,7 @@ public class RoleController {
     private static final HttpHeaders headers = new HttpHeaders();
 
     static {
-        //headers.set("Access-Control-Allow-Origin", "*");
+        headers.set("Access-Control-Allow-Origin", "*");
     }
 
     @GetMapping(path = "/get-roles")

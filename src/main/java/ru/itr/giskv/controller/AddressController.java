@@ -26,9 +26,9 @@ public class AddressController {
     }
 
     @GetMapping(path = "/v0/addresses")
-    public ResponseEntity<List<Address>> getAllAddresses() {
+    public List<Address> getAllAddresses() {
         List<Address> addressList = this.addressService.findAll();
-        return new ResponseEntity<>(addressList, headers, HttpStatus.OK);
+        return addressList;
     }
 
     @PostMapping(path = "/v0/addresses")

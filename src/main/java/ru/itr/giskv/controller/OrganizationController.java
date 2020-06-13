@@ -24,9 +24,9 @@ public class OrganizationController {
     }
 
     @GetMapping(path = "/v0/organizations")
-    public ResponseEntity<List<Organization>> getAllOrganizations() {
+    public List<Organization> getAllOrganizations() {
         List<Organization> organizationList = this.organizationService.findAll();
-        return new ResponseEntity<>(organizationList, headers, HttpStatus.OK);
+        return organizationList;
     }
 
     @PostMapping(path = "/v0/organizations")

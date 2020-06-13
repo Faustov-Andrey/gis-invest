@@ -24,9 +24,9 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/v0/employees")
-    public ResponseEntity<List<Employee>> getAllEmployees() {
+    public List<Employee> getAllEmployees() {
         List<Employee> employeeList = this.employeeService.findAll();
-        return new ResponseEntity<>(employeeList, headers, HttpStatus.OK);
+        return employeeList;
     }
 
     @PostMapping(path = "/v0/employees")

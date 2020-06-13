@@ -23,9 +23,9 @@ public class OwnerController {
     }
 
     @GetMapping(path = "/v0/owners")
-    public ResponseEntity<List<OrganizationOwner>> getAllOwners() {
+    public List<OrganizationOwner> getAllOwners() {
         List<OrganizationOwner> organizationOwnerList = this.ownerService.findAll();
-        return new ResponseEntity<>(organizationOwnerList, headers, HttpStatus.OK);
+        return organizationOwnerList;
     }
 
     @PostMapping(path = "/v0/owners")
