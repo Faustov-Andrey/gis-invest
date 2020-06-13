@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="vap" />
+        <module name="gis-invest" />
         <module name="gis-kv" />
         <module name="vap-core" />
       </profile>
@@ -14,6 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gis-invest" options="-parameters" />
       <module name="gis-kv" options="-parameters" />
     </option>
   </component>
