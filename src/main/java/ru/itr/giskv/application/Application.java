@@ -1,23 +1,18 @@
-package com.sbt.vap.application;
+package ru.itr.giskv.application;
 
-import com.sbt.vap.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import ru.itr.giskv.model.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import com.sbt.vap.service.UserService;
 
-import java.util.List;
+@SpringBootApplication(scanBasePackages = {"ru.itr.giskv.service", "ru.itr.giskv.controller", "ru.itr.giskv.configure", "ru.itr.giskv.filters"})
 
-@SpringBootApplication(scanBasePackages = {"com.sbt.vap.service", "com.sbt.vap.controller", "com.sbt.vap.configure", "com.sbt.vap.filters"})
-
-@EntityScan("com.sbt.vap.model")
-@EnableJpaRepositories("com.sbt.vap.repository")
+@EntityScan("ru.itr.giskv.model")
+@EnableJpaRepositories("ru.itr.giskv.repository")
 //public class Application implements CommandLineRunner {
 public class Application extends SpringBootServletInitializer implements CommandLineRunner {
 

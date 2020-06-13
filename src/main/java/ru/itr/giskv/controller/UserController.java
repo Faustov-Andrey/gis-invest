@@ -1,12 +1,10 @@
-package com.sbt.vap.controller;
+package ru.itr.giskv.controller;
 
-import com.sbt.vap.model.User;
+import ru.itr.giskv.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.sbt.vap.service.UserService;
+import ru.itr.giskv.service.UserService;
 
 import java.util.List;
 

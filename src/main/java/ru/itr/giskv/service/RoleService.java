@@ -1,9 +1,9 @@
-package com.sbt.vap.service;
+package ru.itr.giskv.service;
 
-import com.sbt.vap.model.Role;
+import ru.itr.giskv.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.sbt.vap.repository.RoleRepo;
+import ru.itr.giskv.repository.RoleRepo;
 
 import java.util.List;
 

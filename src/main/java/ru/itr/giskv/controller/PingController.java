@@ -1,4 +1,4 @@
-package com.sbt.vap.controller;
+package ru.itr.giskv.controller;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

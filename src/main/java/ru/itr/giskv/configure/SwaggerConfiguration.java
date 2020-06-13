@@ -1,4 +1,4 @@
-package com.sbt.vap.configure;
+package ru.itr.giskv.configure;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).groupName("").
                 apiInfo(getApiInfo()).select().apis(RequestHandlerSelectors.
-                basePackage("com.sbt.vap")).paths(PathSelectors.any()).build();
+                basePackage("ru.itr.gis-invest")).paths(PathSelectors.any()).build();
     }
 
     private ApiInfo getApiInfo() {

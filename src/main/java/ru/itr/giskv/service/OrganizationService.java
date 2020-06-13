@@ -1,10 +1,9 @@
-package com.sbt.vap.service;
+package ru.itr.giskv.service;
 
-import com.sbt.vap.controller.OrganizationController;
-import com.sbt.vap.model.Organization;
+import ru.itr.giskv.model.Organization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.sbt.vap.repository.OrganizationRepo;
+import ru.itr.giskv.repository.OrganizationRepo;
 
 import java.util.List;
 

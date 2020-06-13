@@ -1,9 +1,9 @@
-package com.sbt.vap.service;
+package ru.itr.giskv.service;
 
-import com.sbt.vap.model.User;
+import ru.itr.giskv.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.sbt.vap.repository.UserRepo;
+import ru.itr.giskv.repository.UserRepo;
 
 import java.util.List;
 
