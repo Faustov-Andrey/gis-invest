@@ -30,7 +30,7 @@ public class EmployeeController {
     }
 
     @PostMapping(path = "/v0/employees")
-    public Long newOwner(@RequestBody Employee body) {
+    public Long newEmployee(@RequestBody Employee body) {
 
         //ниже временный код для проверки работы метода saveOrganization()
         Employee employee = new Employee();
@@ -50,7 +50,7 @@ public class EmployeeController {
 
 
     @PutMapping(path = "/v0/employees")
-    public boolean saveRequestLogRecord(@RequestBody Employee body) {
+    public boolean saveEmployee(@RequestBody Employee body) {
 
         //ниже временный код для проверки работы метода saveOrganization()
         Employee employee = new Employee();

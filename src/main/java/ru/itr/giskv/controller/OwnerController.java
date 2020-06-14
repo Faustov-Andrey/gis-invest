@@ -62,7 +62,7 @@ public class OwnerController {
 
 
     @PutMapping(path = "/v0/owners")
-    public boolean saveRequestLogRecord(@RequestBody OrganizationOwner body) {
+    public boolean saveOwner(@RequestBody OrganizationOwner body) {
 
         OrganizationOwner organizationOwner = new OrganizationOwner();
         organizationOwner.setId(body.getId());

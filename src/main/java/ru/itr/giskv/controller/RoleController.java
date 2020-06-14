@@ -22,7 +22,7 @@ public class RoleController {
     }
 
     @GetMapping(path = "/get-roles")
-    public List<Role> getAllUsers() {
+    public List<Role> getAllRoles() {
         List<Role> roleList = this.roleService.findAll();
         return roleList;
     }

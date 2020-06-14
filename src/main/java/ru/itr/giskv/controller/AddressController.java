@@ -32,7 +32,7 @@ public class AddressController {
     }
 
     @PostMapping(path = "/v0/addresses")
-    public Long newOrganization(@RequestBody Address body) {
+    public Long newAddress(@RequestBody Address body) {
 
         //ниже временный код для проверки работы метода saveOrganization()
         Address address = new Address();
@@ -59,7 +59,7 @@ public class AddressController {
 
 
     @PutMapping(path = "/v0/addresses")
-    public boolean saveRequestLogRecord(@RequestBody Address body) {
+    public boolean saveAddress(@RequestBody Address body) {
 
         //ниже временный код для проверки работы метода saveOrganization()
         Address address = new Address();

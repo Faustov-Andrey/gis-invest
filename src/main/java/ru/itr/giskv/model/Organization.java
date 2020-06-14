@@ -75,6 +75,48 @@ public class Organization implements Serializable {
     private String shareCapital;
 
     /**
+     * Тип контакта
+     */
+    @Column(name = "contact_type", nullable = true, length = 32)
+    private String contactType;
+
+    /**
+     * Значение контакта
+     */
+    @Column(name = "contact_value", nullable = true, length = 128)
+    private String contactValue;
+
+    /**
+     * ОКТМО
+     */
+    @Column(name = "oktmo", nullable = true, length = 128)
+    private String oktmo;
+
+    /**
+     * Наименование учреждения Банка России (кредитной организации)
+     */
+    @Column(name = "bank_name", nullable = true, length = 128)
+    private String bankName;
+
+    /**
+     * БИК
+     */
+    @Column(name = "bik", nullable = true, length = 32)
+    private String bik;
+
+    /**
+     * Корреспондентский счет
+     */
+    @Column(name = "corresp_acc", nullable = true, length = 128)
+    private String correspAcc;
+
+    /**
+     * Расчетный счет
+     */
+    @Column(name = "acount", nullable = true, length = 128)
+    private String account;
+
+    /**
      * описание
      */
     @Column(name = "description", nullable = true, length = 512)
@@ -136,6 +178,41 @@ public class Organization implements Serializable {
     public String getShareCapital(){ return shareCapital; }
     public void setShareCapital(String shareCapital) {
         this.shareCapital = shareCapital;
+    }
+
+    public String getContactType(){ return contactType; }
+    public void setContactType(String contactType) {
+        this.contactType = contactType;
+    }
+
+    public String getContactValue(){ return contactValue; }
+    public void setContactValue(String contactValue) {
+        this.contactValue = contactValue;
+    }
+
+    public String getOktmo(){ return oktmo; }
+    public void setOktmo(String oktmo) {
+        this.oktmo = oktmo;
+    }
+
+    public String getBankName(){ return bankName; }
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
+
+    public String getBik(){ return bik; }
+    public void setBik(String bik) {
+        this.bik = bik;
+    }
+
+    public String getCorrespAcc(){ return correspAcc; }
+    public void setCorrespAcc(String correspAcc) {
+        this.correspAcc = correspAcc;
+    }
+
+    public String getAccount(){ return account; }
+    public void setAccount(String account) {
+        this.account = account;
     }
 
     public String getDescription(){ return description; }

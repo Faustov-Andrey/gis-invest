@@ -52,7 +52,7 @@ public class OrganizationController {
 
 
     @PutMapping(path = "/v0/organizations")
-    public boolean saveRequestLogRecord(@RequestBody Organization body) {
+    public boolean saveOrganization(@RequestBody Organization body) {
 
         //ниже временный код для проверки работы метода saveRequestLogRecord()
         Organization organization = new Organization();
