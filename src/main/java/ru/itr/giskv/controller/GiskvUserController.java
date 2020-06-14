@@ -29,38 +29,18 @@ public class GiskvUserController {
 
 
     @PostMapping(path = "/v0/users")
-    public boolean newUser(@RequestBody GiskvUser body) {
+    public GiskvUser newUser(@RequestBody GiskvUser body) {
 
-        //ниже временный код для проверки работы метода saveUser()
-        GiskvUser giskvUser = new GiskvUser();
-        giskvUser.setLastName(body.getLastName());
-        giskvUser.setFirstName(body.getFirstName());
-        giskvUser.setFathersName(body.getFathersName());
-        giskvUser.setPersonalNumber(body.getPersonalNumber());
-        giskvUser.setLogin(body.getLogin());
-        giskvUser.setPwd(body.getPwd());
-        giskvUser.setComment(body.getComment());
+        GiskvUser giskvUser = this.giskvUserService.saveUser(body);
 
-        this.giskvUserService.saveUser(giskvUser);
-        return true;
+        return giskvUser;
     }
 
     @PutMapping(path = "/v0/users")
-    public boolean saveUser(@RequestBody GiskvUser body) {
+    public GiskvUser saveUser(@RequestBody GiskvUser body) {
 
-        //ниже временный код для проверки работы метода saveUser()
-        GiskvUser giskvUser = new GiskvUser();
-        giskvUser.setId(body.getId());
-        giskvUser.setLastName(body.getLastName());
-        giskvUser.setFirstName(body.getFirstName());
-        giskvUser.setFathersName(body.getFathersName());
-        giskvUser.setPersonalNumber(body.getPersonalNumber());
-        giskvUser.setLogin(body.getLogin());
-        giskvUser.setPwd(body.getPwd());
-        giskvUser.setComment(body.getComment());
-
-        this.giskvUserService.saveUser(giskvUser);
-        return true;
+        GiskvUser giskvUser = this.giskvUserService.saveUser(body);
+        return giskvUser;
     }
 
     @GetMapping(path = "/v0/users/{id}")

@@ -13,8 +13,9 @@ public class GiskvUserService {
     @Autowired
     private GiskvUserRepo giskvUserRepo;
 
-    public void saveUser(final GiskvUser giskvUser) {
-        this.giskvUserRepo.saveAndFlush(giskvUser);
+    public GiskvUser saveUser(final GiskvUser giskvUser) {
+        GiskvUser user = this.giskvUserRepo.saveAndFlush(giskvUser);
+        return user;
     }
 
     public List<GiskvUser> findAll() {

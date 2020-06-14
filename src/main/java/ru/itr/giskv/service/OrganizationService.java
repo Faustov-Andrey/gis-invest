@@ -13,7 +13,10 @@ public class OrganizationService {
     @Autowired
     private OrganizationRepo organizationRepo;
 
-    public Organization saveOrganization(final Organization organization) { return this.organizationRepo.saveAndFlush(organization); }
+    public Organization saveOrganization(Organization organization) {
+        Organization org = this.organizationRepo.saveAndFlush(organization);
+        return org;
+    }
 
     public List<Organization> findAll() {
         return this.organizationRepo.findAll();

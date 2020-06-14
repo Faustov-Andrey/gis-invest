@@ -32,19 +32,7 @@ public class EmployeeController {
     @PostMapping(path = "/v0/employees")
     public Long newEmployee(@RequestBody Employee body) {
 
-        //ниже временный код для проверки работы метода saveOrganization()
-        Employee employee = new Employee();
-        employee.setOrganizationId(body.getOrganizationId());
-        employee.setFio(body.getFio());
-        employee.setPosition(body.getPosition());
-        employee.setDirectorFlag(body.getDirectorFlag());
-        employee.setEmployeeCredentials(body.getEmployeeCredentials());
-        employee.setContactType(body.getContactType());
-        employee.setContactValue(body.getContactValue());
-        employee.setGiskvLogin(body.getGiskvLogin());
-        employee.setEsiaLogin(body.getEsiaLogin());
-
-        Long newEmployeeId = this.employeeService.saveEmployee(employee).getId();
+        Long newEmployeeId = this.employeeService.saveEmployee(body).getId();
         return newEmployeeId;
     }
 
@@ -52,20 +40,7 @@ public class EmployeeController {
     @PutMapping(path = "/v0/employees")
     public boolean saveEmployee(@RequestBody Employee body) {
 
-        //ниже временный код для проверки работы метода saveOrganization()
-        Employee employee = new Employee();
-        employee.setId(body.getId());
-        employee.setOrganizationId(body.getOrganizationId());
-        employee.setFio(body.getFio());
-        employee.setPosition(body.getPosition());
-        employee.setDirectorFlag(body.getDirectorFlag());
-        employee.setEmployeeCredentials(body.getEmployeeCredentials());
-        employee.setContactType(body.getContactType());
-        employee.setContactValue(body.getContactValue());
-        employee.setGiskvLogin(body.getGiskvLogin());
-        employee.setEsiaLogin(body.getEsiaLogin());
-
-        this.employeeService.saveEmployee(employee);
+        this.employeeService.saveEmployee(body);
         //возвращать true если созранение прошло успешно и false при сбое
         return true;
     }

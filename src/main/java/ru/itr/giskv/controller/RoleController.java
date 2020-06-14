@@ -21,47 +21,33 @@ public class RoleController {
         headers.set("Access-Control-Allow-Origin", "*");
     }
 
-    @GetMapping(path = "/get-roles")
+    @GetMapping(path = "/v0/roles")
     public List<Role> getAllRoles() {
         List<Role> roleList = this.roleService.findAll();
         return roleList;
     }
 
-    @GetMapping(path = "/new-role")
-    public boolean newRole(String name, String description, String comment) {
+    @PostMapping(path = "/v0/roles")
+    public Role newRole(@RequestBody Role body) {
 
-        //ниже временный код для проверки работы метода saveRole()
-        Role role = new Role();
 
-        role.setName(name);
-        role.setDescription(description);
-        role.setComment(comment);
-
-        this.roleService.saveRole(role);
-        return true;
+        Role role = this.roleService.saveRole(body);
+        return role;
     }
 
-    @GetMapping(path = "/save-role")
-    public boolean saveRole(long id, String name, String description, String comment) {
+    @PutMapping(path = "/v0/roles")
+    public Role saveRole(@RequestBody Role body) {
 
-        //Сделать парсинг request-а, выбрать из него атрибуры и засетить их в поля объекта
-        //ниже временный код для проверки работы метода saveRole()
-        Role role = new Role();
-        role.setId(id);
-        role.setName(name);
-        role.setDescription(description);
-        role.setComment(comment);
-
-        this.roleService.saveRole(role);
-        return true;
+        Role role = this.roleService.saveRole(body);
+        return role;
     }
 
-    @GetMapping(path = "/get-role-by-id")
+    @GetMapping(path = "/v0/roles/{id}")
     public Role getRoleById(long id) {
         return this.roleService.getRoleByID(id);
     }
 
-    @GetMapping(path = "/delete-role-by-id")
+    @DeleteMapping(path = "/v0/roles/{id}")
     public boolean deleteRoleById(long id) {
         Role role = getRoleById(id);
         this.roleService.deleteRole(role);

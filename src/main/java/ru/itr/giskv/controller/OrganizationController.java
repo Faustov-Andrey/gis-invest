@@ -30,48 +30,20 @@ public class OrganizationController {
     }
 
     @PostMapping(path = "/v0/organizations")
-    public Long newOrganization(@RequestBody Organization body) {
+    public Organization newOrganization(@RequestBody Organization body) {
 
-        //ниже временный код для проверки работы метода saveOrganization()
-        Organization organization = new Organization();
-        organization.setOrgForm(body.getOrgForm());
-        organization.setFullName(body.getFullName());
-        organization.setShortName(body.getShortName());
-        organization.setInn(body.getInn());
-        organization.setKpp(body.getKpp());
-        organization.setOgrn(body.getOgrn());
-        organization.setOkpo(body.getOkpo());
-        organization.setOkved(body.getOkved());
-        organization.setShareCapital(body.getShareCapital());
-        organization.setDescription(organization.getDescription());
-        organization.setComment(organization.getComment());
+        Organization organization = this.organizationService.saveOrganization(body);
 
-        Long newOrganizationId = this.organizationService.saveOrganization(organization).getId();
-        return newOrganizationId;
+        return organization;
     }
 
 
     @PutMapping(path = "/v0/organizations")
-    public boolean saveOrganization(@RequestBody Organization body) {
+    public Organization saveOrganization(@RequestBody Organization body) {
 
-        //ниже временный код для проверки работы метода saveRequestLogRecord()
-        Organization organization = new Organization();
-        organization.setId(body.getId());
-        organization.setOrgForm(body.getOrgForm());
-        organization.setFullName(body.getFullName());
-        organization.setShortName(body.getShortName());
-        organization.setInn(body.getInn());
-        organization.setKpp(body.getKpp());
-        organization.setOgrn(body.getOgrn());
-        organization.setOkpo(body.getOkpo());
-        organization.setOkved(body.getOkved());
-        organization.setShareCapital(body.getShareCapital());
-        organization.setDescription(organization.getDescription());
-        organization.setComment(organization.getComment());
+        Organization org = this.organizationService.saveOrganization(body);
 
-        this.organizationService.saveOrganization(organization);
-        //возвращать true если созранение прошло успешно и false при сбое
-        return true;
+        return org;
     }
 
 

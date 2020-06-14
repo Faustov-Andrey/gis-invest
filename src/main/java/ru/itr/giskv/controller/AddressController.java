@@ -32,58 +32,20 @@ public class AddressController {
     }
 
     @PostMapping(path = "/v0/addresses")
-    public Long newAddress(@RequestBody Address body) {
+    public Address newAddress(@RequestBody Address body) {
 
-        //ниже временный код для проверки работы метода saveOrganization()
-        Address address = new Address();
-        address.setType(body.getType());
-        address.setZipCode(body.getZipCode());
-        address.setState(body.getState());
-        address.setRegion(body.getRegion());
-        address.setTown(body.getTown());
-        address.setTownDistrict(body.getTownDistrict());
-        address.setRegionDistrict(body.getRegionDistrict());
-        address.setSettlement(body.getSettlement());
-        address.setTerritory(body.getTerritory());
-        address.setStreet(body.getStreet());
-        address.setStructure(body.getStructure());
-        address.setBuilding(body.getBuilding());
-        address.setCorpus(body.getCorpus());
-        address.setFlat(body.getFlat());
-        address.setAddr(body.getAddr());
+        Address address = this.addressService.saveAddress(body);
 
-
-        Long newAddressId = this.addressService.saveAddress(address).getId();
-        return newAddressId;
+        return address;
     }
 
 
     @PutMapping(path = "/v0/addresses")
-    public boolean saveAddress(@RequestBody Address body) {
+    public Address saveAddress(@RequestBody Address body) {
 
-        //ниже временный код для проверки работы метода saveOrganization()
-        Address address = new Address();
-        address.setId(body.getId());
-        address.setOrganizationId(body.getOrganizationId());
-        address.setType(body.getType());
-        address.setZipCode(body.getZipCode());
-        address.setState(body.getState());
-        address.setRegion(body.getRegion());
-        address.setTown(body.getTown());
-        address.setTownDistrict(body.getTownDistrict());
-        address.setRegionDistrict(body.getRegionDistrict());
-        address.setSettlement(body.getSettlement());
-        address.setTerritory(body.getTerritory());
-        address.setStreet(body.getStreet());
-        address.setStructure(body.getStructure());
-        address.setBuilding(body.getBuilding());
-        address.setCorpus(body.getCorpus());
-        address.setFlat(body.getFlat());
-        address.setAddr(body.getAddr());
+        Address address  = this.addressService.saveAddress(body);
 
-        this.addressService.saveAddress(address);
-        //возвращать true если созранение прошло успешно и false при сбое
-        return true;
+        return address;
     }
 
 

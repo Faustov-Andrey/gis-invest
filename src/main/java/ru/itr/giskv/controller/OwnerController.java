@@ -29,67 +29,19 @@ public class OwnerController {
     }
 
     @PostMapping(path = "/v0/owners")
-    public Long newOwner(@RequestBody OrganizationOwner body) {
+    public OrganizationOwner newOwner(@RequestBody OrganizationOwner body) {
 
-        //ниже временный код для проверки работы метода saveOrganization()
-        OrganizationOwner organizationOwner = new OrganizationOwner();
-        organizationOwner.setOrganizationId(body.getOrganizationId());
-        organizationOwner.setType(body.getType());
-        organizationOwner.setSharesProportion(body.getSharesProportion());
-        organizationOwner.setCapitalShares(body.getCapitalShares());
-        organizationOwner.setOwnerOpf(body.getOwnerOpf());
-        organizationOwner.setOwnerFullName(body.getOwnerFullName());
-        organizationOwner.setInn(body.getInn());
-        organizationOwner.setKpp(body.getKpp());
-        organizationOwner.setOgrn(body.getOgrn());
-        organizationOwner.setDirectorFullName(body.getDirectorFullName());
-        organizationOwner.setBirthDate(body.getBirthDate());
-        organizationOwner.setBirthPlace(body.getBirthPlace());
-        organizationOwner.setCitizenship(body.getCitizenship());
-        organizationOwner.setIdentificationDocument(body.getIdentificationDocument());
-        organizationOwner.setResidenceRightDocument(body.getResidenceRightDocument());
-        organizationOwner.setResidenceAddress(body.getResidenceAddress());
-        organizationOwner.setContactType(body.getContactType());
-        organizationOwner.setContactValue(body.getContactValue());
-        organizationOwner.setBeneficialOwnerFlag(body.getBeneficialOwnerFlag());
-        organizationOwner.setTaxResidentFlag(body.getTaxResidentFlag());
-
-
-
-        Long newOwnerId = this.ownerService.saveOwner(organizationOwner).getId();
-        return newOwnerId;
+        OrganizationOwner organizationOwner = this.ownerService.saveOwner(body);
+        return organizationOwner;
     }
 
 
     @PutMapping(path = "/v0/owners")
-    public boolean saveOwner(@RequestBody OrganizationOwner body) {
+    public OrganizationOwner saveOwner(@RequestBody OrganizationOwner body) {
 
-        OrganizationOwner organizationOwner = new OrganizationOwner();
-        organizationOwner.setId(body.getId());
-        organizationOwner.setOrganizationId(body.getOrganizationId());
-        organizationOwner.setType(body.getType());
-        organizationOwner.setSharesProportion(body.getSharesProportion());
-        organizationOwner.setCapitalShares(body.getCapitalShares());
-        organizationOwner.setOwnerOpf(body.getOwnerOpf());
-        organizationOwner.setOwnerFullName(body.getOwnerFullName());
-        organizationOwner.setInn(body.getInn());
-        organizationOwner.setKpp(body.getKpp());
-        organizationOwner.setOgrn(body.getOgrn());
-        organizationOwner.setDirectorFullName(body.getDirectorFullName());
-        organizationOwner.setBirthDate(body.getBirthDate());
-        organizationOwner.setBirthPlace(body.getBirthPlace());
-        organizationOwner.setCitizenship(body.getCitizenship());
-        organizationOwner.setIdentificationDocument(body.getIdentificationDocument());
-        organizationOwner.setResidenceRightDocument(body.getResidenceRightDocument());
-        organizationOwner.setResidenceAddress(body.getResidenceAddress());
-        organizationOwner.setContactType(body.getContactType());
-        organizationOwner.setContactValue(body.getContactValue());
-        organizationOwner.setBeneficialOwnerFlag(body.getBeneficialOwnerFlag());
-        organizationOwner.setTaxResidentFlag(body.getTaxResidentFlag());
-
-        this.ownerService.saveOwner(organizationOwner);
+        OrganizationOwner organizationOwner = this.ownerService.saveOwner(body);
         //возвращать true если созранение прошло успешно и false при сбое
-        return true;
+        return organizationOwner;
     }
 
 

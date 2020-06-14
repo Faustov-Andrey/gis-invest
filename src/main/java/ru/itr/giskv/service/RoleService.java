@@ -13,7 +13,7 @@ public class RoleService {
     @Autowired
     private RoleRepo roleRepo;
 
-    public void saveRole(final Role role) { this.roleRepo.saveAndFlush(role); }
+    public Role saveRole(final Role role) { return this.roleRepo.saveAndFlush(role); }
 
     public List<Role> findAll() {
         return this.roleRepo.findAll();

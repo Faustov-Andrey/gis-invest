@@ -113,7 +113,7 @@ public class Organization implements Serializable {
     /**
      * Расчетный счет
      */
-    @Column(name = "acount", nullable = true, length = 128)
+    @Column(name = "account", nullable = true, length = 128)
     private String account;
 
     /**
